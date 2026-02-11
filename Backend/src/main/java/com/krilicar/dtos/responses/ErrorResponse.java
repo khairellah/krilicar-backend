@@ -1,22 +1,22 @@
 package com.krilicar.dtos.responses;
-import lombok.*;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDateTime;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class ErrorResponse {
+
     private int status;
     private String error;
     private String message;
     private String path;
-    private LocalDateTime timestamp = LocalDateTime.now(); // Initialisé par défaut
-
-    // Constructeur personnalisé que tu utilises dans tes Handlers
-    public ErrorResponse(int status, String error, String message, String path) {
-        this.status = status;
-        this.error = error;
-        this.message = message;
-        this.path = path;
-    }
+    @Builder.Default
+    private LocalDateTime timestamp = LocalDateTime.now();
 }
