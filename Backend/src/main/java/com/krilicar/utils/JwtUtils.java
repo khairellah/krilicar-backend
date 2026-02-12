@@ -20,7 +20,7 @@ public class JwtUtils {
     private String jwtSecret;
 
     @Value("${jwt.expiration.ms}")
-    private int jwtExpirationMs;
+    private long jwtExpirationMs;
 
     // Clé de signature JWT
     private Key key() {
